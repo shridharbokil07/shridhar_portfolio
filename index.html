@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
+</head>
+
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <a href="#home" class="logo">SHRIDHAR</a>
+
+        <nav id="navbar">
+            <a href="#home" class="nav-link active"> Home</a>
+            <a href="#about" class="nav-link">About</a> 
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="home section fade-section">
+        <div class="home-img">
+            <img src="img.png" alt="">
+        </div>
+
+        <div class="home-content">
+            <h1 class="fade-up">Hi, It's <span>Shridhar</span></h1>
+            <h3 class="typing-text fade-up">I'm Fullstack Developer <span></span></h3>
+
+            <p class="fade-up">Crafting seamless digital experiences, from pixel to scalable backend.</p>
+
+            <div class="social-icons fade-up">
+                <a href="https://www.linkedin.com/in/shridharbokil/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/shridharbokil07" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://twitter.com/your-twitter" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/shridhar.05/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <div class="resume-btn-wrapper fade-up">
+                <a href="Resume.pdf" download class="resume-btn">
+                    <i class="fa-solid fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section fade-section about-section">
+        <h2 class="heading fade-up">About Me</h2>
+        <div class="about-container fade-up">
+            <p>
+                I am a BCA Computer Science Student from Vasantrao Naik Mahavidyalaya with passion for software
+                development and a keen interest in web development. I am proficient in JavaScript, React, Node.js
+                and have experience with various web technologies. I am always eager to learn and explore new
+                technologies to enhance my skills.
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section fade-section"> 
+        <h1 class="heading fade-up">My Skills</h1>
+
+        <div class="skills-grid fade-up">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">React.js</div>
+
+            <div class="skill">Node.js</div>
+            <div class="skill">MongoDB</div>
+            <div class="skill">Express.js</div>
+            <div class="skill">Git & Github</div>
+
+            <div class="skill center-skill">Tailwind CSS</div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section fade-section">
+        <h1 class="heading fade-up">Education</h1>
+
+        <div class="timeline fade-up">
+            <div class="timeline-box">
+                <h3>BCA Computer Science</h3>
+                <span>2023 - 2026</span>
+                <p>Completed graduation with strong knowledge in programming, databases, and web development.</p>
+            </div>
+
+            <div class="timeline-box">
+                <h3>HSC Science</h3>
+                <span>2021 - 2023</span>
+                <p>Studied Physics, Maths, Electronics, and Computer Science foundation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section fade-section">
+        <h1 class="heading fade-up">Experience</h1>
+
+        <div class="timeline fade-up">
+            <div class="timeline-box">
+                <h3>Nocter IT Solutions (Fullstack Developer Intern)</h3>
+                <span>Sep 2025 - Nov 2025</span> 
+                <p>Built weather app with API Integration</p>
+            </div>
+            <div class="timeline-box" >
+                <h3>Zidio Development (Web Developer Intern)</h3>
+                <span>Feb 2025 - Apr 2025</span> 
+                <p>Building websites and dashboards for clients with modern UI.</p>
+            </div>
+            <div class="timeline-box">
+                <h3>CODSOFT (Fullstack Intern)</h3>
+                <span>Sep 2024 - Oct 2024</span>
+                <p>Worked on MERN stack projects—authentication, APIs, and responsive UI.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section fade-section">
+        <h1 class="heading fade-up">Contact Me</h1>
+
+        <form class="contact-form fade-up" action="mailto:youremail@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- ⭐ SCROLL-SPY + ANIMATIONS SCRIPT ⭐ -->
+    <script>
+        // SCROLL SPY
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(a => {
+                a.classList.remove("active");
+                if (a.getAttribute("href").includes(current)) {
+                    a.classList.add("active");
+                }
+            });
+        });
+
+        // FADE-IN ANIMATION ON SCROLL
+        const fadeSections = document.querySelectorAll(".fade-section, .fade-up");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        fadeSections.forEach(sec => observer.observe(sec));
+    </script>
+
+</body>
+</html>
