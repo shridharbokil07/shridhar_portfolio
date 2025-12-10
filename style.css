@@ -169,17 +169,20 @@ section{
     margin: auto;
 }
 
-.timeline-box{
+.timeline-box {
     background: rgba(255,255,255,0.08);
     padding: 2rem;
     border-radius: 1rem;
     border-left: 4px solid #ff4d4d;
-    transition: 0.3s;
+    transition: 0.35s ease;
     font-size: 1.8rem;
 }
 
-.timeline-box:hover{
-    transform: translateX(12px);
+.timeline-box:hover {
+    transform: translateX(12px) scale(1.02);
+    border-left: 4px solid #ff6b6b;
+    background: rgba(255,255,255,0.12);
+    box-shadow: 0 0 18px rgba(255, 77, 77, 0.3);
 }
 
 /* CONTACT */
@@ -216,7 +219,7 @@ section{
 }
 
 /* RESUME BTN */
-.resume-btn{
+.resume-btn {
     background: linear-gradient(135deg, #ff4b2b, #ff416c);
     padding: 12px 28px;
     border-radius: 50px;
@@ -224,14 +227,15 @@ section{
     display: inline-flex;
     gap: 10px;
     color: white;
-    box-shadow: 0 4px 15px rgba(255, 65, 108, 0.3);
-    transition: .4s;
+    box-shadow: 0 0 18px rgba(255, 65, 108, 0.6);
+    transition: .4s ease;
 }
 
-.resume-btn:hover{
-    transform: translateY(-3px);
+.resume-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 0 28px rgba(255, 65, 108, 0.9),
+                0 0 50px rgba(255, 75, 43, 0.8);
 }
-
 /* ABOUT */
 .about-container{
     font-size: 2.2rem;
@@ -262,4 +266,70 @@ section{
 .fade-up.show{
     opacity: 1;
     transform: translateY(0);
+}
+/* ---------------- MOBILE RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+
+    header {
+        padding: 1.5rem 5%;
+    }
+
+    nav a {
+        margin-left: 2rem;
+        font-size: 1.6rem;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 3rem;
+        padding-top: 12rem;
+    }
+
+    .home-img img {
+        width: 60vw;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .home-content p {
+        font-size: 1.5rem;
+        padding: 0 1.5rem;
+    }
+
+    /* Skills grid mobile */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .center-skill {
+        grid-column: span 2;
+    }
+
+    /* Timeline full width */
+    .timeline {
+        max-width: 100%;
+        padding: 0 1.5rem;
+    }
+
+    .timeline-box {
+        font-size: 1.6rem;
+    }
+
+    /* Contact */
+    .contact-form {
+        width: 90%;
+    }
+
+    .about-container {
+        font-size: 1.8rem;
+        margin: 0 1.5rem;
+    }
 }
